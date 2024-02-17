@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    /* Style for the emergency button */
+    .emergency-button {
+      background-color: red;
+      color: white;
+      padding: 15px 30px;
+      font-size: 18px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-bottom: 20px;
+    }
+
+    /* Style for the continue button */
+    .continue-button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    /* Additional styles for header */
+    #header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      padding: 10px;
+      background-color: #333;
+      color: white;
+    }
+
+    .logo {
+      text-decoration: none;
+      color: white;
+    }
+
+    .logo07 {
+      width: 30px;
+      height: auto;
+      margin-left: 10px;
+    }
+
+    .icons {
+      list-style: none;
+      display: flex;
+      margin: 0;
+      padding: 0;
+    }
+
+    .icons li {
+      margin-right: 10px;
+    }
+
+    .grd {
+      font-size: 20px;
+    }
+  </style>
+</head>
+
+<body>
+ 
+<form action="/emergency-redirect" METHOD="GET">
+  <!-- Emergency button -->
+  <button class="emergency-button">Emergency</button>
+</form>
+<form action="/dashboard/dash" method="PUT">
+  <!-- Continue button -->
+  <button class="continue-button">Continue</button>
+</form>
+
+</body>
+</html>

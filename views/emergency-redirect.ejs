@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Emergency Information</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    input {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 15px;
+      box-sizing: border-box;
+    }
+
+    button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Emergency Information Form</h1>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+
+    button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    p {
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Get Current Location</h1>
+
+  <button onclick="getLocation()">Get My Location</button>
+
+  <p id="locationResult"></p>
+
+  <script>
+    function getLocation() {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition, showError);
+      } else {
+        alert("Geolocation is not supported by this browser.");
+      }
+    }
+
+    function showPosition(position) {
+      const latitude = position.coords.latitude;
+      const longitude = position.coords.longitude;
+      
+      const locationResult = document.getElementById("locationResult");
+      locationResult.innerHTML = `Latitude: ${latitude}<br>Longitude: ${longitude}`;
+    }
+
+    function showError(error) {
+      switch (error.code) {
+        case error.PERMISSION_DENIED:
+          alert("User denied the request for Geolocation.");
+          break;
+        case error.POSITION_UNAVAILABLE:
+          alert("Location information is unavailable.");
+          break;
+        case error.TIMEOUT:
+          alert("The request to get user location timed out.");
+          break;
+        case error.UNKNOWN_ERROR:
+          alert("An unknown error occurred.");
+          break;
+      }
+    }
+  </script>
+
+<form action="https://formsubmit.co/abhinavrai966@gmail.com" method="POST">
+
+  <label for="location">Current Live Location:</label>
+  <input type="text" id="location" name="location" placeholder="location>
+
+  <label for="emergencyContacts">Emergency Contacts:</label>
+  <textarea id="emergencyContacts" name="emergencyContacts" rows="4" placeholder="mergencyContacts"></textarea>
+
+  <label for="medicalInfo">Medical Information:</label>
+  <textarea id="medicalInfo" name="medicalInfo" rows="4" placeholder="medicalInfo"></textarea>
+
+  <button onclick="submitEmergencyInfo()">Submit Emergency Information</button>
+
+</form>
+
+
+
+
+
+
+  
+  <script>
+    function submitEmergencyInfo() {
+      // You can add JavaScript logic here to handle form submission
+      alert('Emergency information submitted successfully!');
+    }
+  </script>
+
+
+
+
+</body>
+</html>
