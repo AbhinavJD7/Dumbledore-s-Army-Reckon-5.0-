@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -33,38 +34,32 @@
     }
   </style>
 </head>
+
 <body>
 
   <h1>Emergency Information Form</h1>
 
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 20px;
-    }
-
-    button {
-      background-color: #4CAF50;
-      color: white;
-      padding: 10px 20px;
-      font-size: 16px;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-
-    p {
-      margin-top: 10px;
-    }
-  </style>
-</head>
-<body>
-
-  <h1>Get Current Location</h1>
-
   <button onclick="getLocation()">Get My Location</button>
 
   <p id="locationResult"></p>
+
+
+    <form action="https://formsubmit.co/harshsingh6103@gmail.com" method="POST" />
+
+    <label for="location">Current Live Location:</label>
+    <input type="text" id="location" name="location" placeholder="Location">
+
+    <label for="emergencyContacts">Emergency Contacts:</label>
+    <textarea id="emergencyContacts" name="emergencyContacts" rows="4" placeholder="Emergency Contacts"></textarea>
+
+    <label for="medicalInfo">Medical Information:</label>
+    <textarea id="medicalInfo" name="medicalInfo" rows="4" placeholder="Medical Info"></textarea>
+
+    <br><br>
+
+    <button onclick="submitEmergencyInfo()">Submit Emergency Information</button>
+
+  </form>
 
   <script>
     function getLocation() {
@@ -78,9 +73,11 @@
     function showPosition(position) {
       const latitude = position.coords.latitude;
       const longitude = position.coords.longitude;
-      
       const locationResult = document.getElementById("locationResult");
+      const locationInput = document.getElementById("location");
+
       locationResult.innerHTML = `Latitude: ${latitude}<br>Longitude: ${longitude}`;
+      locationInput.value = `Latitude: ${latitude}, Longitude: ${longitude}`;
     }
 
     function showError(error) {
@@ -99,38 +96,13 @@
           break;
       }
     }
-  </script>
 
-<form action="https://formsubmit.co/abhinavrai966@gmail.com" method="POST">
-
-  <label for="location">Current Live Location:</label>
-  <input type="text" id="location" name="location" placeholder="location>
-
-  <label for="emergencyContacts">Emergency Contacts:</label>
-  <textarea id="emergencyContacts" name="emergencyContacts" rows="4" placeholder="mergencyContacts"></textarea>
-
-  <label for="medicalInfo">Medical Information:</label>
-  <textarea id="medicalInfo" name="medicalInfo" rows="4" placeholder="medicalInfo"></textarea>
-
-  <button onclick="submitEmergencyInfo()">Submit Emergency Information</button>
-
-</form>
-
-
-
-
-
-
-  
-  <script>
     function submitEmergencyInfo() {
       // You can add JavaScript logic here to handle form submission
       alert('Emergency information submitted successfully!');
     }
   </script>
 
-
-
-
 </body>
+
 </html>

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,6 +24,7 @@
       border-radius: 5px;
       cursor: pointer;
       margin-bottom: 20px;
+      margin-left: 30%;
     }
 
     /* Style for the continue button */
@@ -34,6 +36,7 @@
       border: none;
       border-radius: 5px;
       cursor: pointer;
+     margin-right: 45%;
     }
 
     /* Additional styles for header */
@@ -72,19 +75,32 @@
     .grd {
       font-size: 20px;
     }
+
+    
   </style>
 </head>
 
 <body>
- 
-<form action="/emergency-redirect" METHOD="GET">
-  <!-- Emergency button -->
-  <button class="emergency-button">Emergency</button>
-</form>
-<form action="/dashboard/dash" method="PUT">
-  <!-- Continue button -->
-  <button class="continue-button">Continue</button>
-</form>
+
+  <form action="/emergency-redirect" METHOD="GET">
+    <!-- Emergency button -->
+    <button class="emergency-button">Emergency</button> <br>
+    <br>
+    <label class = "acknowledge" for="acknowledge"><b>"Activation of the emergency button without valid </b> <br> <b>cause will result in swift and stringent measures being enforced."</b></label>
+    <input type="checkbox" id="acknowledge" name="acknowledge" required>
+    <br>
+  </form>
+
+  <form action="/dashboard/dash" method="PUT">
+    <!-- Acknowledgement checkbox -->
+    
+    
+<br>
+<br>
+    <!-- Continue button -->
+    <button class="continue-button">Continue</button>
+  </form>
 
 </body>
+
 </html>
